@@ -236,11 +236,12 @@ ul { list-style: none; }
 .hero {
   position: relative;
   min-height: 100vh;
+  width: 100%;
   background: var(--navy);
   display: flex;
   align-items: center;
   overflow: hidden;
-  padding: 120px 24px 80px;
+  padding: 120px 48px 80px;
 }
 
 .hero-bg {
@@ -277,23 +278,23 @@ ul { list-style: none; }
   background-size: 60px 60px;
 }
 
-/* Hero layout */
+/* Hero layout — inner wrapper prend toute la largeur disponible */
 .hero > .hero-content,
 .hero > .hero-visual {
   position: relative;
   z-index: 1;
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
 }
 
-.hero {
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 340px;
   gap: 60px;
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 .hero-content { max-width: 660px; }
@@ -1104,10 +1105,11 @@ ul { list-style: none; }
 
 /* Tablet */
 @media (max-width: 1024px) {
-  .hero {
+  .hero { padding: 100px 32px 60px; }
+
+  .hero-inner {
     grid-template-columns: 1fr;
     gap: 48px;
-    padding-top: 100px;
   }
 
   .hero-visual {
