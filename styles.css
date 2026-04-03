@@ -34,6 +34,13 @@
 /* ── Reset & Base ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+html, body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 html {
   scroll-behavior: smooth;
   font-size: 16px;
@@ -65,11 +72,15 @@ ul { list-style: none; }
 ────────────────────────────────────────── */
 .navbar {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 1000;
   background: transparent;
   transition: background var(--transition), box-shadow var(--transition);
   padding: 0;
+  margin: 0;
 }
 
 .navbar.scrolled {
@@ -238,10 +249,10 @@ ul { list-style: none; }
   min-height: 100vh;
   width: 100%;
   background: var(--navy);
+  overflow: hidden;
   display: flex;
   align-items: center;
-  overflow: hidden;
-  padding: 120px 48px 80px;
+  padding: 120px 0 80px;
 }
 
 .hero-bg {
@@ -291,6 +302,7 @@ ul { list-style: none; }
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 48px;
   display: grid;
   grid-template-columns: 1fr 340px;
   gap: 60px;
